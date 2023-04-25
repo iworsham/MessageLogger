@@ -22,5 +22,6 @@ namespace MessageLogger
         {
             Console.WriteLine(message);
         }
+       
     }
 }

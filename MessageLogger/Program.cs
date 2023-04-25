@@ -38,7 +38,7 @@ while (userInput != "quit")
 
     foreach(var message in messages)
     {
-        Console.WriteLine(timeOnly + ": " + message);
+        Console.WriteLine(timeOnly + ": " + message + "\n");
     }
     messages.Add(userInput);
 }
