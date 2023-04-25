@@ -17,5 +17,10 @@ namespace MessageLogger
             Content = content;
             CreatedAt = DateTime.Now;
         }
+
+        public static void SaveMessage()
+        {
+            Console.WriteLine(Console.ReadLine());
+        }
     }
 }
