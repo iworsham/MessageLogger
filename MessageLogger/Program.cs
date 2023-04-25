@@ -12,7 +12,7 @@ Console.Write("What is your username? (one word, no spaces!)");
 Console.ReadLine();
 Console.WriteLine("\n");
 Console.WriteLine("To log out of your user profile, enter 'log out'.");
-User user1 = new ("");
+User user1 = new (userInput);
 user1.LogIn();
 
 
@@ -38,7 +38,7 @@ while (userInput != "quit")
 
     foreach(var message in messages)
     {
-        Console.WriteLine(timeOnly + ": " + message + "\n");
+        Console.WriteLine(timeOnly + ": " + message );
     }
     messages.Add(userInput);
 }
