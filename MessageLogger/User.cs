@@ -12,10 +12,10 @@ namespace MessageLogger
         public string UserName;
         public bool LoggedIn;
         public List<Message> Messages;
-       // public string Password;
+        // public string Password;
 
 
-        public User (string name, string username)
+        public User(string name, string username)
         {
             Name = name;
             UserName = username;
@@ -25,8 +25,8 @@ namespace MessageLogger
         public string LogIn()
         {
             LoggedIn = true;
-                
-           return " Logged In";
+
+            return " Logged In";
         }
 
         public void LogOut()
@@ -41,4 +41,9 @@ namespace MessageLogger
             }
 
         }
+         public void SaveMessage(Message message)
+        {
+            Console.WriteLine(message);
+        }
+    }
 }

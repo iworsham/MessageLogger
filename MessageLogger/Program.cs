@@ -19,22 +19,6 @@ var messages = new List<string>();
 User user1 = new(name, userName);
 user1.LogIn();
 
-User user2 = new(name, userName);
-user2.LogIn();
-
-
-User user3 = new(name, userName);
-user3.LogIn();
-
-
-User user4 = new(name, userName);
-user4.LogIn();
-
-users.Add(user1);
-users.Add(user2);
-users.Add(user3);
-users.Add(user4);
-
 
 Console.Write("Add a message (or 'quit' to exit): " );
 userInput = Console.ReadLine();
@@ -56,26 +40,44 @@ while (userInput != "quit")
         Console.WriteLine(timeOnly + ": " + message );
     }
     messages.Add(userInput);
+
+    if (userInput == "log out")
+    {
+        user1.LogOut();
+        Console.Write("Would you like to log in 'new' or 'existing' user?");
+    }
+    else if (userInput == "existing")
+    {
+
+        user1.LogIn();
+    }
+    else if (userInput == "new")
+    {
+        Console.WriteLine("Lets create a user profile for you.");
+        Console.Write("What is your name?");
+        var name2 = Console.ReadLine();
+        Console.Write("What is your username? (one word, no spaces!)");
+        var userName2 = Console.ReadLine();
+        User user2 = new(name2, userName2);
+        user2.LogIn();
+        var userInput2 = "";
+        userInput2 = Console.ReadLine();
+        var messages2 = new List<string>();
+        foreach(var message in messages2)
+        {
+            Console.WriteLine(timeOnly + ": " + message);
+        }
+        messages2.Add(userInput2);
+    }
+     
+    //user1.SaveMessage();
 }
 
    
 
 if (userInput == "quit")
 {
-    Console.WriteLine($"Thanks for using Message Logger! During this session, you logged {messages.Count} messages");
-}
-else if (userInput == "log out")
-{
-    user1.LogOut();
-    Console.Write("Would you like to log in 'new' or 'existing' user?");
-}
-else if (userInput == "existing")
-{
-
-    user1.LogIn();
-}
-
-
+    Console.WriteLine($"Thanks for using Message Logger! During this session {user1.Name}  logged {messages.Count} messages");
 }
 
 

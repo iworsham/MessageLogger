@@ -18,10 +18,7 @@ namespace MessageLogger
             CreatedAt = DateTime.Now;
         }
 
-        public void SaveMessage(string message)
-        {
-            Console.WriteLine(message);
-        }  
+        
         
         //public void loopMessage()
         //{
